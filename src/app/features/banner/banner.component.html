@@ -1,0 +1,18 @@
+<section
+    class="app-banner"
+    *ngIf="banner"
+    style="background-image: url('{{banner.backgroundUrl}}'); background-size: cover; background-position: center;"
+  >
+  <div class="container">
+
+    <h1 class="title" [innerHTML]="banner.title" ></h1>
+
+    <div class="descriptions" [innerHTML]="banner.subtitle"></div>
+
+    <div class="actions">
+      <a href="https://www.projetou.com.br/planos" class="button hoverable activatable">{{ banner.buttonText }}</a>
+      <a href="https://www.projetou.com.br/cursos" class="button flat hoverable activatable">Ver cursos disponiveis</a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<!-- <div class="app-course-card" *ngIf="props" >
+  <header
+    style="background-image: url('{{props.image}}'); background-size: cover;"
+  >
+  </header>
+
+
+</div> -->
+
+<div class="app-course-card">
+  <header style="background-image: url('{{props.image}}');">
+  </header>
+  <main class="course-content flex col">
+
+      <div class="flex row descriptions">
+        <span class="tag">Curso online</span>
+        <span class="duration">{{props.duration}}</span>
+      </div>
+
+      <h3 class="title">{{ props.name }}</h3>
+
+      <div class="descriptions teacher">{{props.instructor.name}}</div>
+  </main>
+</div>

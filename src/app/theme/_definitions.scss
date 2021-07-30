@@ -1,0 +1,98 @@
+@import './_variables.scss';
+@import './_animations.scss';
+
+
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button, a.button, :is(a.button, button).primary {
+  padding: .4rem 1.5rem;
+
+  background: var(--primary-background);
+  border: 1px solid var(--primary-background);
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Manrope,sans-serif;
+  color: var(--white);
+
+  &.hoverable, &.activatable {
+    -moz-transition: .25s;
+    -o-transition: .25s;
+    -webkit-transition: .25s;
+    transition: .25s;
+  }
+
+  &.hoverable:hover {
+    background: var(--primary-background-hover);
+    border-color: var(--primary-background-hover);
+  }
+
+  &.activatable:is(:focus) {
+    background-color: var(--primary-background-hover);
+    border-color: var(--primary-background-hover);
+    color: var(--white);
+    transform: scale(.97);
+  }
+}
+
+:is(a.button, button).secondary {
+  background: var(--secondary-background);
+  border: 1px solid var(--secondary-background);
+  color: var(--primary-background);
+}
+
+:is(a.button, button).flat {
+  background: var(--flat-background);
+  border: 1px solid var(--flat-background);
+  color: var(--primary-background);
+
+  &.hoverable:hover {
+    background: var(--flat-background-hover);
+    border-color: var(--flat-background-hover);
+    color: var(--flat-font-hover);
+  }
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.title {
+  font-family: Manrope,sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--title);
+}
+
+.descriptions {
+  font-family: Manrope,sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  font-weight: 800;
+
+  // text-shadow: rgb(0 0 0 / 10%) 0 5px 5px;
+}
+.actions {
+  font-family: Roboto,sans-serif;
+
+  *:not(:first-child) {
+    margin-left: .5rem;
+  }
+}
+
+small {
+  font-size: 80%;
+  font-weight: 400;
+}
+
+.container {
+  max-width: var(--breakpoint);
+  width: 100%;
+  margin: auto;
+}

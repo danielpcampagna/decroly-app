@@ -1,0 +1,54 @@
+
+:root {
+  --background-color: #fafafa;
+  --white: #fff;
+
+  --title: #533936;
+
+  --primary-background: #eb3e44;
+  --primary-background-hover: #672d2d;
+  --primary-font: var(--background-color);
+
+  --secondary-background: #fff;
+  --secondary-font: #eb3e44;
+
+  --flat-background: transparent;
+  --flat-background-hover: var(--background-color);
+  --flat-background-active: var(--primary-background-hover);
+  --flat-font: #dc3545;
+  --flat-font-hover: var(--primary-background-hover);
+
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1110px; //1200px;
+
+  --breakpoint: var(--breakpoint-xs);
+
+}
+
+@media screen and (min-width: 576px) {
+  :root {
+    --breakpoint: var(--breakpoint-md);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --breakpoint: var(--breakpoint-md);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  :root {
+    --breakpoint: var(--breakpoint-lg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    --breakpoint: var(--breakpoint-xl);
+  }
+}
+

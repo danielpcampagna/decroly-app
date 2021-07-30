@@ -1,0 +1,39 @@
+<div class="list-of-cards" *ngIf="cardsProps">
+
+  <div class="container">
+    <h2 class="title">{{ title }}</h2>
+
+    <carousel
+      *ngIf="shouldUseCarousel; else elseBlock"
+      [cellWidth]="250"
+      [height]="styles.item.height"
+      >
+
+      <div class="carousel-cell" *ngFor="let card of cardsProps">
+        <app-template-card
+          [props]="card"
+          [cardComponent]="cardComponent"
+        ></app-template-card>
+      </div>
+    </carousel>
+
+    <ng-template #elseBlock>
+      <div
+        class="list"
+        [style]="styles.list"
+      >
+        <div
+          class="item"
+          *ngFor="let card of cardsProps"
+          [style]="{ width: '250px', height: '300px' }"
+        >
+          <app-template-card
+            [props]="card"
+            [cardComponent]="cardComponent"
+          ></app-template-card>
+        </div>
+      </div>
+    </ng-template>
+  <br />
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<main class="app-home">
+  <app-header></app-header>
+
+  <app-banner [banner]="$banner | async"></app-banner>
+
+  <section>
+
+    <div class="container">
+      <div *ngFor="let category of ($categories | async)">
+        <div *ngFor="let tag of category.category_tags">
+
+          <!-- <app-tag-list
+            [tag]="tag"
+            [title]="makeTagListTitle(category.name, tag.name)"
+            [category]="category"
+            [courses]="($coursesIdByCategoryTag | async) | getCourse:category.id:tag.id:($courses | async)"
+            ></app-tag-list> -->
+
+          <app-list-of-cards
+            [title]="makeTagListTitle(category.name, tag.name)"
+            [cardComponent]="cardComponent"
+            [cardsProps]="($coursesIdByCategoryTag | async) | getCourse:category.id:tag.id:($courses | async)"
+            [styles]="{ list: { maxWidth: 'var(--breakpoint)' }}"
+          >
+          </app-list-of-cards>
+
+        </div>
+        <hr />
+      </div>
+    </div>
+  </section>
+</main>

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  decroly_api_url: 'https://api.decroly.com.br',
 };
 
 /*
